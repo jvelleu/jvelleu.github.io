@@ -22,23 +22,23 @@ function activateTheme(theme) {
     localStorage.setItem("theme", theme);
     document.documentElement.setAttribute("theme", theme);
 }
-    /*
-    export function activateDarkTheme() {
-    activateTheme("dark");
-    }
 
-    function activateLightTheme() {
+function activateDarkTheme() {
+    activateTheme("dark");
+}
+
+function activateLightTheme() {
     activateTheme("light");
-    }
-    */
+}
+
 function activateColorScheme() {
     const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isLightTheme = window.matchMedia("(prefers-color-scheme: light)").matches;
     const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches;
     const isNotSupported = !isDarkTheme && !isLightTheme && !isNotSpecified;
 
-    if (isDarkTheme) activateTheme("dark");//activateDarkTheme();
-    if (isLightTheme) activateTheme("light");//activateLightTheme();
+    if (isDarkTheme) activateDarkTheme();
+    if (isLightTheme) activateLightTheme();
     if (isNotSpecified) {
         console.log("Your browser doesn't have a color scheme preference. Defaulting to dark theme.");
         activateDarkTheme();
