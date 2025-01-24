@@ -2,4 +2,5 @@ import { onLoad, activateTheme, activateColorScheme, toggleTheme } from "./modul
 import { customCursor } from "./modules/cursor.js";
 console.log("test1")
 onLoad();
+toggleTheme();
 customCursor();
