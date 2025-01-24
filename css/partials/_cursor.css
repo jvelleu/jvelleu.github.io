@@ -1,0 +1,29 @@
+:root * {
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: width 0.2s, height 0.2s;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+}
+
+.cursor-bg {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: 0, 0, 0, 0;
+  mix-blend-mode: var(--blend-mode);
+  pointer-events: none;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}/*# sourceMappingURL=_cursor.css.map */

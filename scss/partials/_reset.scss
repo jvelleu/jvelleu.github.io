@@ -1,0 +1,27 @@
+@import '../node_modules/modern-normalize/modern-normalize.css';
+// https://github.com/sindresorhus/modern-normalize
+// https://mattbrictson.com/blog/css-normalize-and-reset
+
+:root {
+  line-height: 1.5;
+  font-size: 62.5%; //scale default root font size to 10px
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}

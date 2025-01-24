@@ -1,0 +1,30 @@
+h1 {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" 450;
+  text-decoration: none;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 3rem;
+  font-variation-settings: "wght" 233.3333333333;
+}
+
+p {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" 350;
+}
+
+a {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" 450;
+  text-decoration: none;
+}
+
+#logo {
+  text-transform: uppercase;
+  text-decoration: none;
+}/*# sourceMappingURL=_type.css.map */

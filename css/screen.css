@@ -1,0 +1,288 @@
+@import '../node_modules/modern-normalize/modern-normalize.css';
+:root {
+  line-height: 1.5;
+  font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role=list], ul[role=list] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #5d24f5;
+  --blend-mode: screen;
+}
+
+[theme=dark] {
+  --background-color: #000;
+  --text-color: #fff;
+  --link-color: #f1f227;
+  --blend-mode: multiply;
+}
+
+body {
+  background-color: var(--background-color);
+  transition: background-color 0.3s;
+}
+
+body * {
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+p a {
+  color: var(--text-color);
+}
+
+.toggle-container {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  height: 3rem;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.toggle-text.light {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.toggle-text.dark {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+[theme=light] .toggle-text.light {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+[theme=dark] .toggle-text.dark {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+::-moz-selection {
+  color: var(--background-color);
+  background-color: var(--link-color);
+}
+
+::selection {
+  color: var(--background-color);
+  background-color: var(--link-color);
+}
+
+h1 {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" 450;
+  text-decoration: none;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 3rem;
+  font-variation-settings: "wght" 233.3333333333;
+}
+
+p {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" 350;
+}
+
+a {
+  font-family: cofo-sans-variable, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" 450;
+  text-decoration: none;
+}
+
+#logo {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* LAYOUT */
+.main-nav {
+  padding: 10px;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+#nav-block {
+  grid-area: nav;
+}
+
+#logo-block {
+  grid-area: logo;
+  height: 12rem;
+  align-items: center;
+}
+
+#left-bar {
+  grid-area: left-bar;
+}
+
+#right-bar {
+  grid-area: right-bar;
+}
+
+#intro {
+  grid-area: intro;
+}
+
+#case-list {
+  grid-area: case-list;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: clamp(240px, 22rem, 360px) 1fr clamp(240px, 22rem, 360px);
+  grid-template-areas: "nav . logo" "nav intro ." "nav case-list right-bar";
+  padding: 0;
+  margin: 0;
+}
+
+/*
+@media (min-width: $breakpoint) {
+    body{
+
+    }
+}
+*/
+/* CURSOR */
+:root * {
+  cursor: none;
+}
+
+#cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: width 0.2s, height 0.2s;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+}
+
+#cursor-bg {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: 0, 0, 0, 0;
+  mix-blend-mode: var(--blend-mode);
+  pointer-events: none;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* EXAMPLE USE
+$breakpoints: (
+  phone-sm: 420px,
+  phone: 767px,
+  tablet: 768px,
+  tablet-lg: 1024px,
+  desktop: 1025px,
+  desktop-lg: 1600px
+  );
+
+@mixin for-size($breakpoint, $direction:down) {
+
+// If the breakpoint exists in the map.
+@if map-has-key($breakpoints, $breakpoint) {
+
+// Get the breakpoint value.
+$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+// Determine the direction and then write the media query.
+@if $direction == up {
+  @media (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+@else if $direction == down {
+  @media (max-width: $breakpoint-value) {
+    @content;
+     }
+  }
+}
+// If the breakpoint doesn't exist in the map, pass a manual breakpoint
+@else {
+  @if $direction == up {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+  @else if $direction == down {
+    @media (max-width: $breakpoint) {
+      @content;
+      }
+    }
+  }
+}
+
+
+.my-element {
+  @include for-size(1365px,up) {
+    padding-right:0;
+  }
+}
+*/
+/* COLOR */
+/*
+:root {
+    background-color: $primary-color;
+}
+*/
+/*
+@include color-mode($themes) {
+    * {
+        color: themed("text");
+        background-color: themed("background");
+    }
+}
+*//*# sourceMappingURL=screen.css.map */

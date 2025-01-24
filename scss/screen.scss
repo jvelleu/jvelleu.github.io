@@ -1,0 +1,168 @@
+@use "./partials" as *;
+
+/* LAYOUT */
+.main-nav {
+    padding: 10px;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+#nav-block {
+    grid-area: nav;
+    //-color: red;
+}
+
+#logo-block {
+    grid-area: logo;
+    height: $header-height;
+    align-items: center;
+    //background-color: blue;
+}
+
+#left-bar {
+    grid-area: left-bar;
+    //background-color: yellow;
+}
+
+#right-bar {
+    grid-area: right-bar;
+    //background-color: green;
+}
+
+#intro {
+    grid-area: intro;
+    //background-color: orange;
+}
+
+#case-list {
+    grid-area: case-list;
+    //background-color: pink;
+}
+
+#home {
+    display: grid;
+    grid-template-columns: $bar-width 1fr $bar-width;
+    grid-template-areas:
+        "nav . logo"
+        "nav intro ."
+        "nav case-list right-bar"
+    ;
+    padding: 0; 
+    margin: 0;
+}
+
+/*
+@media (min-width: $breakpoint) {
+    body{
+
+    }
+}
+*/
+
+/* CURSOR */
+:root * {
+    cursor: none; //Hide default cursor
+}
+
+#cursor {
+    position: fixed; //Follow cursor
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    mix-blend-mode: difference; //Invert content beneath
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s;
+    transform: translate(-50%, -50%); //Center the circle
+    z-index: 9998; //Ensure it stays above all other content
+}
+
+#cursor-bg {
+    position: fixed; //Follow cursor
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: (0,0,0,0); //Initialize as transparent
+    mix-blend-mode: var(--blend-mode); //Blend mode for tint
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    transform: translate(-50%, -50%); //Center the circle
+    z-index: 9999; //Layered above the main cursor for tint
+}
+
+// Media Variables & Mixins
+
+/* EXAMPLE USE
+$breakpoints: (
+  phone-sm: 420px,
+  phone: 767px,
+  tablet: 768px,
+  tablet-lg: 1024px,
+  desktop: 1025px,
+  desktop-lg: 1600px
+  );
+
+@mixin for-size($breakpoint, $direction:down) {
+
+// If the breakpoint exists in the map.
+@if map-has-key($breakpoints, $breakpoint) {
+
+// Get the breakpoint value.
+$breakpoint-value: map-get($breakpoints, $breakpoint);
+
+// Determine the direction and then write the media query.
+@if $direction == up {
+  @media (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+@else if $direction == down {
+  @media (max-width: $breakpoint-value) {
+    @content;
+     }
+  }
+}
+// If the breakpoint doesn't exist in the map, pass a manual breakpoint
+@else {
+  @if $direction == up {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+  @else if $direction == down {
+    @media (max-width: $breakpoint) {
+      @content;
+      }
+    }
+  }
+}
+
+
+.my-element {
+  @include for-size(1365px,up) {
+    padding-right:0;
+  }
+}
+*/
+
+/* COLOR */
+/*
+:root {
+    background-color: $primary-color;
+}
+*/
+
+/*
+@include color-mode($themes) {
+    * {
+        color: themed("text");
+        background-color: themed("background");
+    }
+}
+*/

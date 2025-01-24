@@ -1,0 +1,19 @@
+// Colors
+$primary-color: #000;
+$secondary_color: #fff;
+$light-accent-color: #f1f227;
+$dark-accent-color: #5d24f5;
+$light-blend-mode: multiply;
+$dark-blend-mode: screen;
+
+// Typography
+$primary-font: cofo-sans-variable, sans-serif;
+$secondary-font: cofo-sans-mono-variable, sans-serif;
+$base-font-size: 2rem;
+$base-font-weight: 350;
+$scale-factor: 1.5;
+
+// Layout
+$bar-width: clamp(240px, 22rem, 360px);
+$header-height: 12rem;
+$breakpoint: min(640px, 64rem); //max?
