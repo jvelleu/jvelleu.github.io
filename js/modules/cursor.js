@@ -22,7 +22,6 @@ export function initializeCursor() {
         cursor.style.height = '0px';
         cursorBg.style.width = '0px';
         cursorBg.style.height = '0px';
-        console.log("leave");
     });
 
     // Restore cursor size when re-entering the page
@@ -31,7 +30,6 @@ export function initializeCursor() {
         cursor.style.height = '20px';
         cursorBg.style.width = '20px';
         cursorBg.style.height = '20px';
-        console.log("enter");
     });
 
     // Hover effect for links
