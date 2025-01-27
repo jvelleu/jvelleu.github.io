@@ -9,4 +9,7 @@ function onLoad() {
     initializeIntro();
 }
 
+// Expose toggleTheme globally for use in HTML
+window.toggleTheme = toggleTheme;
+
 window.onload = onLoad;

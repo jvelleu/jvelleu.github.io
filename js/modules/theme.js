@@ -11,12 +11,12 @@ function activateTheme(theme) {
 }
 
 // Activate dark theme
-export function activateDarkTheme() {
+function activateDarkTheme() {
   activateTheme("dark");
 }
 
 // Activate light theme
-export function activateLightTheme() {
+function activateLightTheme() {
   activateTheme("light");
 }
 
