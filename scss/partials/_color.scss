@@ -13,69 +13,28 @@
     --link-color: #{$light-accent-color};
     --blend-mode: #{$light-blend-mode};
 }
-  
-body {
+
+body { // Baseline text & background color
     background-color: var(--background-color);
-    transition: background-color 0.3s;
-}
-
-body * {
     color: var(--text-color);
-    transition: color 0.3s;
+    transition: background-color $slow-transition, color $slow-transition;
 }
 
-p a {
+a {
+    color: var(--link-color);
+    transition: color $slow-transition;
+}
+
+a:hover {
     color: var(--text-color);
 }
-  
 
-//TOGGLE THEME
-.toggle-container {
-    position: relative;
-    font-size: 2rem;
-    font-weight: bold;
-    //cursor: pointer;
-    user-select: none;
-    overflow: hidden;
-    height: 3rem;
-    width: 150px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-nav {
+    color: var(--text-color);
+    transition: color $slow-transition;
 }
-
-.toggle-text {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.toggle-text.light {
-    //color: var(--text-color);
-    transform: translateY(-100%); //Swipe up
-    opacity: 0; //Fade out
-}
-
-.toggle-text.dark {
-    //color: var(--text-color);
-    transform: translateY(100%); //Swipe down
-    opacity: 0; //Fade in
-}
-
-[theme="light"] .toggle-text.light {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-[theme="dark"] .toggle-text.dark {
-    transform: translateY(0);
-    opacity: 1;
-}
-
 
 ::selection { 
     color: var(--background-color);
-    background-color: var(--link-color); 
+    background-color: var(--link-color);
 }

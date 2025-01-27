@@ -1,0 +1,126 @@
+@use "_variables" as *;
+
+
+
+/* CURSOR */
+:root * {
+    cursor: none; //Hide default cursor
+}
+
+@mixin base-cursor {
+    position: fixed; // Follow cursor
+    width: 0; // Inititalize at 0;
+    height: 0; // Inititalize at 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); // Center the circle
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s;
+}
+
+#cursor {
+    @include base-cursor;
+    background-color: #fff;
+    mix-blend-mode: difference; // Invert content beneath
+    z-index: 9998; // Ensure it stays above all other content
+}
+
+#cursor-bg {
+    @include base-cursor;
+    background-color: (0,0,0,0); // Initialize as transparent
+    mix-blend-mode: var(--blend-mode); // Blend mode for tint
+    z-index: 9999; // Layered above the main cursor for tint
+}
+
+//INTRO
+body {
+
+}
+
+.container {
+  display: flex;
+  align-items: baseline; /* Align to baseline */
+  text-align: left;
+  margin: 2rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  //gap: 1rem;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  //font-family: Arial, sans-serif;
+  //background: #f5f5f5;
+  overflow: hidden;
+  width: max-content;
+}
+
+.scroll-text {
+  font-size: 2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  width: max-content;
+}
+
+.column-text {
+  font-size: 2rem;
+  text-align: left;
+  list-style-type: none;
+}
+
+.column-text li {
+  //line-height: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.space {
+  margin-left: 0.5rem; /* Space between text elements */
+}
+  
+//TOGGLE THEME
+.toggle-container {
+    position: relative;
+    //font-size: 2rem;
+    //font-weight: bold;
+    user-select: none;
+    overflow: hidden;
+    height: 3rem;
+    width: 150px;
+    //text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-text {
+    position: absolute;
+    width: 100%;
+    //text-align: center;
+    transition: transform $slow-transition, opacity $slow-transition;
+}
+
+.toggle-text.light {
+    transform: translateY(-100%); //Swipe up
+    opacity: 0; //Fade out
+}
+
+.toggle-text.dark {
+    transform: translateY(100%); //Swipe down
+    opacity: 0; //Fade in
+}
+
+[theme="light"] .toggle-text.light {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+[theme="dark"] .toggle-text.dark {
+    transform: translateY(0);
+    opacity: 1;
+}
+

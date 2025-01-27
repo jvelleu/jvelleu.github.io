@@ -20,19 +20,30 @@ h2, h3, h4, h5, h6 {
 p {
     @include base-type;
     font-variation-settings: "wght" $base-font-weight;
+    transition: font-variation-settings $fast-transition;
 }
 
-a {
+.main-nav {
     @include base-type;
     font-variation-settings: "wght" calc($base-font-weight + 100);
     text-decoration: none;
+    padding: $base-pad;
+    transition: font-variation-settings $fast-transition;
 }
 
-.intro {
+.main-nav:hover {
+    font-variation-settings: "wght" calc($base-font-weight + 250);
+}
 
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
 }
 
 #logo {
     text-transform: uppercase;
-    text-decoration: none;
 }

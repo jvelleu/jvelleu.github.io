@@ -15,16 +15,30 @@ p {
   font-family: cofo-sans-variable, sans-serif;
   font-size: 2rem;
   font-variation-settings: "wght" 350;
+  transition: font-variation-settings 0.2s ease;
 }
 
-a {
+.main-nav {
   font-family: cofo-sans-variable, sans-serif;
   font-size: 2rem;
   font-variation-settings: "wght" 450;
   text-decoration: none;
+  padding: min(1em, 10px);
+  transition: font-variation-settings 0.2s ease;
+}
+
+.main-nav:hover {
+  font-variation-settings: "wght" 600;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }
 
 #logo {
   text-transform: uppercase;
-  text-decoration: none;
 }/*# sourceMappingURL=_type.css.map */

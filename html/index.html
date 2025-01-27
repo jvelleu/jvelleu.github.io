@@ -17,21 +17,30 @@
             <li><a href="/work/" class="main-nav">Work</a></li>
         </ul>
     </nav>
-    <div id="intro">
-        <p>My name is Jesse Velleu</p>
-        <p>I am a product designer.</p>
-    </div>
-    <div id="case-list">
-        <p>Here is a selection of my works.</p>
+    <div class="container" id="intro">
+        <div id="left-text" class="scroll-text">I am a</div>
+        <div class="space"></div>
+        <div class="column">
+            <ul role="list" class="column-text" id="ul_o">
+                <li>product</li>
+                <li>UX/UI</li>
+                <li>interaction</li>
+                <li>brand</li>
+                <li>motion</li>
+                <li>systems</li>
+            </ul>
+        </div>
+        <div class="space"></div>
+        <div id="right-text" class="scroll-text">designer.</div>
     </div>
     <div id="right-bar">
         <p>Right Bar</p>
         <div class="toggle-container" onclick="toggleTheme()">
-            <span class="toggle-text light"><a>Dark-Mode <span>&darr;</span></a></span>
-            <span class="toggle-text dark"><a>Light-Mode <span>&uarr;</span></a></span>
+            <a class="main-nav toggle-text light">Dark-Mode <span>&darr;</span></a>
+            <a class="main-nav toggle-text dark">Light-Mode <span>&uarr;</span></a>
         </div>
     </div>
     <div id="cursor-bg"></div>
     <div id="cursor"></div>
-    <script src="../js/main.js"></script>
+    <script src="../js/main_full.js"></script>
 </body>

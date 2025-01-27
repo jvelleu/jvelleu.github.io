@@ -1,18 +1,5 @@
 @use "./partials" as *;
 
-/* LAYOUT */
-.main-nav {
-    padding: 10px;
-}
-
-.left {
-    text-align: left;
-}
-
-.right {
-    text-align: right;
-}
-
 #nav-block {
     grid-area: nav;
     //-color: red;
@@ -65,36 +52,7 @@
 }
 */
 
-/* CURSOR */
-:root * {
-    cursor: none; //Hide default cursor
-}
 
-#cursor {
-    position: fixed; //Follow cursor
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #fff;
-    mix-blend-mode: difference; //Invert content beneath
-    pointer-events: none;
-    transition: width 0.2s, height 0.2s;
-    transform: translate(-50%, -50%); //Center the circle
-    z-index: 9998; //Ensure it stays above all other content
-}
-
-#cursor-bg {
-    position: fixed; //Follow cursor
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: (0,0,0,0); //Initialize as transparent
-    mix-blend-mode: var(--blend-mode); //Blend mode for tint
-    pointer-events: none;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-    transform: translate(-50%, -50%); //Center the circle
-    z-index: 9999; //Layered above the main cursor for tint
-}
 
 // Media Variables & Mixins
 
