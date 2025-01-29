@@ -14,12 +14,43 @@ $base-font-weight: 350;
 $scale-factor: 1.5;
 
 // Layout
-$base-pad: min(1em, 10px);
+$small-pad: 10px;
+$large-pad: 30px;
+$responsive-pad: clamp(10px, 1em, 30px);
 $bar-width: clamp(240px, 22rem, 360px);
 
 $header-height: 12rem;
 $breakpoint: min(640px, 64rem); //max?
 
-//Utilities
+// Transitions
 $fast-transition: 0.2s ease;
 $slow-transition: 0.4s ease;
+
+//Mixins
+@mixin font($scale, $type: none) { // 'link', 'hover'
+    font-family: $primary-font;
+    font-size: calc($base-font-size + ((1 - $scale) * ($base-font-size * $scale-factor)));
+    $weight: calc($base-font-weight - ((1 - $scale) * ($base-font-weight / $scale-factor * 0.75)) + var(--weight-correct));
+    @if $type == 'link' {$weight: calc($weight + 100);}
+    @else if $type == 'hover' {$weight: calc($weight + 250);}
+    font-variation-settings: "wght" $weight;
+    transition: font-variation-settings $fast-transition;
+}
+
+//CSS Variables (for JS)
+:root {
+    --background-color: #{$secondary_color};
+    --text-color: #{$primary_color};
+    --link-color: #{$dark-accent-color};
+    --blend-mode: #{$dark-blend-mode};
+    --weight-correct: 50;
+    --radius: #{calc($responsive-pad * 2)};
+}
+
+[theme="dark"] {
+    --background-color: #{$primary_color};
+    --text-color: #{$secondary-color};
+    --link-color: #{$light-accent-color};
+    --blend-mode: #{$light-blend-mode};
+    --weight-correct: 0;
+}

@@ -1,5 +1,22 @@
 @import '../node_modules/modern-normalize/modern-normalize.css';
 :root {
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #5d24f5;
+  --blend-mode: screen;
+  --weight-correct: 50;
+  --radius: calc(clamp(10px, 1em, 30px) * 2);
+}
+
+[theme=dark] {
+  --background-color: #000;
+  --text-color: #fff;
+  --link-color: #f1f227;
+  --blend-mode: multiply;
+  --weight-correct: 0;
+}
+
+:root {
   line-height: 1.5;
   font-size: 62.5%;
 }
@@ -21,20 +38,6 @@ h1, h2, h3, h4, h5 {
 img {
   display: block;
   max-inline-size: 100%;
-}
-
-:root {
-  --background-color: #fff;
-  --text-color: #000;
-  --link-color: #5d24f5;
-  --blend-mode: screen;
-}
-
-[theme=dark] {
-  --background-color: #000;
-  --text-color: #fff;
-  --link-color: #f1f227;
-  --blend-mode: multiply;
 }
 
 body {
@@ -67,37 +70,31 @@ a:hover {
   background-color: var(--link-color);
 }
 
+/*
+@mixin base-type {
+    font-family: $primary-font;
+    font-size: $base-font-size;
+}
+*/
 h1 {
   font-family: cofo-sans-variable, Arial, sans-serif;
   font-size: 2rem;
-  font-variation-settings: "wght" 450;
-  text-decoration: none;
+  font-variation-settings: "wght" calc(350 + var(--weight-correct));
+  transition: font-variation-settings 0.2s ease;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: cofo-sans-variable, Arial, sans-serif;
-  font-size: 3rem;
-  font-variation-settings: "wght" 233.3333333333;
+  font-size: -1rem;
+  font-variation-settings: "wght" calc(525 + var(--weight-correct));
+  transition: font-variation-settings 0.2s ease;
 }
 
 p {
   font-family: cofo-sans-variable, Arial, sans-serif;
   font-size: 2rem;
-  font-variation-settings: "wght" 350;
+  font-variation-settings: "wght" calc(350 + var(--weight-correct));
   transition: font-variation-settings 0.2s ease;
-}
-
-.main-nav {
-  font-family: cofo-sans-variable, Arial, sans-serif;
-  font-size: 2rem;
-  font-variation-settings: "wght" 450;
-  text-decoration: none;
-  padding: min(1em, 10px);
-  transition: font-variation-settings 0.2s ease;
-}
-
-.main-nav:hover {
-  font-variation-settings: "wght" 600;
 }
 
 .left {
@@ -106,6 +103,42 @@ p {
 
 .right {
   text-align: right;
+}
+
+.main-nav {
+  font-family: cofo-sans-variable, Arial, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" calc(350 + var(--weight-correct) + 100);
+  transition: font-variation-settings 0.2s ease;
+  text-decoration: none;
+  padding: clamp(10px, 1em, 30px);
+  transition: font-variation-settings 0.2s ease;
+}
+
+.main-nav:hover {
+  font-family: cofo-sans-variable, Arial, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" calc(350 + var(--weight-correct) + 250);
+  transition: font-variation-settings 0.2s ease;
+}
+
+.scroll-text {
+  font-family: cofo-sans-variable, Arial, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" calc(350 + var(--weight-correct));
+  transition: font-variation-settings 0.2s ease;
+  transition: transform 0.3s ease;
+}
+
+.column-text {
+  font-family: cofo-sans-variable, Arial, sans-serif;
+  font-size: 2rem;
+  font-variation-settings: "wght" calc(350 + var(--weight-correct));
+  transition: font-variation-settings 0.2s ease;
+}
+
+.column-text li {
+  transition: opacity 0.3s ease;
 }
 
 #logo {
@@ -119,8 +152,8 @@ p {
 
 #cursor {
   position: fixed;
-  width: 0;
-  height: 0;
+  width: calc(clamp(10px, 1em, 30px) * 2);
+  height: calc(clamp(10px, 1em, 30px) * 2);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -132,8 +165,8 @@ p {
 
 #cursor-bg {
   position: fixed;
-  width: 0;
-  height: 0;
+  width: calc(clamp(10px, 1em, 30px) * 2);
+  height: calc(clamp(10px, 1em, 30px) * 2);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -143,11 +176,13 @@ p {
   z-index: 9999;
 }
 
-.container {
+.animate-container {
   display: flex;
   align-items: baseline; /* Align to baseline */
   text-align: left;
-  margin: 2rem;
+  margin: 10px;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .column {
@@ -156,31 +191,11 @@ p {
   align-items: flex-start;
   justify-content: flex-start;
   margin: 0;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   overflow: hidden;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.scroll-text {
-  font-size: 2rem;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.column-text {
-  font-size: 2rem;
-  text-align: left;
-  list-style-type: none;
-}
-
-.column-text li {
-  transition: opacity 0.3s ease;
 }
 
 .space {
@@ -207,22 +222,18 @@ p {
 }
 
 .toggle-text.light {
-  transform: translateY(-100%);
   opacity: 0;
 }
 
 .toggle-text.dark {
-  transform: translateY(100%);
   opacity: 0;
 }
 
 [theme=light] .toggle-text.light {
-  transform: translateY(0);
   opacity: 1;
 }
 
 [theme=dark] .toggle-text.dark {
-  transform: translateY(0);
   opacity: 1;
 }
 
@@ -255,7 +266,7 @@ p {
 #home {
   display: grid;
   grid-template-columns: clamp(240px, 22rem, 360px) 1fr clamp(240px, 22rem, 360px);
-  grid-template-areas: "nav . logo" "nav intro ." "nav case-list right-bar";
+  grid-template-areas: "nav . logo" "nav intro intro" "nav case-list right-bar";
   padding: 0;
   margin: 0;
 }

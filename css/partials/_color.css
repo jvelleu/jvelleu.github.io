@@ -3,6 +3,7 @@
   --text-color: #000;
   --link-color: #5d24f5;
   --blend-mode: screen;
+  --space: clamp(10px, 1em, 30px);
 }
 
 [theme=dark] {

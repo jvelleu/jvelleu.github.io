@@ -1,1 +1,16 @@
-/*# sourceMappingURL=_variables.css.map */
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #5d24f5;
+  --blend-mode: screen;
+  --weight-correct: 50;
+  --radius: calc(clamp(10px, 1em, 30px) * 2);
+}
+
+[theme=dark] {
+  --background-color: #000;
+  --text-color: #fff;
+  --link-color: #f1f227;
+  --blend-mode: multiply;
+  --weight-correct: 0;
+}/*# sourceMappingURL=_variables.css.map */

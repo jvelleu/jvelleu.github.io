@@ -83,30 +83,30 @@ document.addEventListener('mouseleave', () => {
 
 // Restore cursor size when re-entering the page
     document.addEventListener('mouseenter', () => {
-    cursor.style.width = '20px';
-    cursor.style.height = '20px';
-    cursorBg.style.width = '20px';
-    cursorBg.style.height = '20px';
+    cursor.style.width = 'var(--radius)';
+    cursor.style.height = 'var(--radius)';
+    cursorBg.style.width = 'var(--radius)';
+    cursorBg.style.height = 'var(--radius)';
     console.log("enter");
 });
 
 // Hover effect for links
 links.forEach(link => {
     link.addEventListener('mouseenter', () => {
-    cursor.style.width = '40px'; // Increase size for main cursor
-    cursor.style.height = '40px';
+    cursor.style.width = 'calc(var(--radius) * 2)'; // Increase size for main cursor
+    cursor.style.height = 'calc(var(--radius) * 2)';
 
-    cursorBg.style.width = '40px'; // Increase size for background
-    cursorBg.style.height = '40px';
+    cursorBg.style.width = 'calc(var(--radius) * 2)'; // Increase size for background
+    cursorBg.style.height = 'calc(var(--radius) * 2)';
     cursorBg.style.backgroundColor = 'var(--link-color)'; // Add tint
     });
 
     link.addEventListener('mouseleave', () => {
-    cursor.style.width = '20px'; // Reset size for main cursor
-    cursor.style.height = '20px';
+    cursor.style.width = 'var(--radius)'; // Reset size for main cursor
+    cursor.style.height = 'var(--radius)';
 
-    cursorBg.style.width = '20px'; // Reset size for background
-    cursorBg.style.height = '20px';
+    cursorBg.style.width = 'var(--radius)'; // Reset size for background
+    cursorBg.style.height = 'var(--radius)';
     cursorBg.style.backgroundColor = 'transparent'; // Remove tint
     });
 });
@@ -114,6 +114,7 @@ links.forEach(link => {
 //INTRO
 // Function to get the width of text using the measureText method
 function getTextWidth(text, font = '2rem Arial') {
+    //const fSize = 
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     ctx.font = font;

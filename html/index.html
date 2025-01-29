@@ -9,7 +9,7 @@
 </head>
 <body id="home">
     <nav class="right" id="logo-block">
-        <a href="/about/" class="main-nav" id="logo">Jesse Velleu</a>
+        <a href="/about/" id="logo" class="main-nav">Jesse Velleu</a>
     </nav>
     <nav class="left" id="nav-block">
         <ul role="list">
@@ -17,11 +17,11 @@
             <li><a href="/work/" class="main-nav">Work</a></li>
         </ul>
     </nav>
-    <div class="container" id="intro">
+    <div class="animate-container" id="intro">
         <div id="left-text" class="scroll-text">I am a</div>
         <div class="space"></div>
         <div class="column">
-            <ul role="list" class="column-text" id="ul_o">
+            <ul role="list" id="ul_o" class="column-text left">
                 <li>product</li>
                 <li>UX/UI</li>
                 <li>interaction</li>
@@ -36,11 +36,12 @@
     <div id="right-bar">
         <p>Right Bar</p>
         <div class="toggle-container" onclick="toggleTheme()">
-            <a class="main-nav toggle-text light">Dark-Mode <span>&darr;</span></a>
-            <a class="main-nav toggle-text dark">Light-Mode <span>&uarr;</span></a>
+            <a class="main-nav toggle-text light">Dark-Mode</a>
+            <a class="main-nav toggle-text dark">Light-Mode</a>
         </div>
     </div>
     <div id="cursor-bg"></div>
     <div id="cursor"></div>
-    <script type="module" src="../js/main.js"></script>
+    <!--<script type="module" src="../js/main.js"></script>-->
+    <script src="../js/main-dev.js"></script>
 </body>

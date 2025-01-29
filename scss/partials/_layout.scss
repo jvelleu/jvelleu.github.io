@@ -1,7 +1,5 @@
 @use "_variables" as *;
 
-
-
 /* CURSOR */
 :root * {
     cursor: none; //Hide default cursor
@@ -9,8 +7,8 @@
 
 @mixin base-cursor {
     position: fixed; // Follow cursor
-    width: 0; // Inititalize at 0;
-    height: 0; // Inititalize at 0;
+    width: calc($responsive-pad * 2); //0; // Inititalize at 0;
+    height: calc($responsive-pad * 2); //0; // Inititalize at 0;
     border-radius: 50%;
     transform: translate(-50%, -50%); // Center the circle
     pointer-events: none;
@@ -32,15 +30,12 @@
 }
 
 //INTRO
-body {
-
-}
-
-.container {
+.animate-container {
   display: flex;
   align-items: baseline; /* Align to baseline */
   text-align: left;
-  margin: 2rem;
+  margin: $small-pad;
+  width: max-content;
 }
 
 .column {
@@ -50,32 +45,12 @@ body {
   justify-content: flex-start;
   //gap: 1rem;
   margin: 0;
-  height: 100vh;
+  height: auto;//100vh;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  //font-family: Arial, sans-serif;
-  //background: #f5f5f5;
   overflow: hidden;
-  width: max-content;
-}
-
-.scroll-text {
-  font-size: 2rem;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-  width: max-content;
-}
-
-.column-text {
-  font-size: 2rem;
-  text-align: left;
-  list-style-type: none;
-}
-
-.column-text li {
-  //line-height: 2rem;
-  transition: opacity 0.3s ease;
+  //width: max-content;
 }
 
 .space {
@@ -83,6 +58,9 @@ body {
 }
   
 //TOGGLE THEME
+
+//********************REMOVE SLIDE ANIMATION!************************************
+
 .toggle-container {
     position: relative;
     //font-size: 2rem;
@@ -105,22 +83,22 @@ body {
 }
 
 .toggle-text.light {
-    transform: translateY(-100%); //Swipe up
+    //transform: translateY(-100%); //Swipe up
     opacity: 0; //Fade out
 }
 
 .toggle-text.dark {
-    transform: translateY(100%); //Swipe down
+    //transform: translateY(100%); //Swipe down
     opacity: 0; //Fade in
 }
 
 [theme="light"] .toggle-text.light {
-    transform: translateY(0);
+    //transform: translateY(0);
     opacity: 1;
 }
 
 [theme="dark"] .toggle-text.dark {
-    transform: translateY(0);
+    //transform: translateY(0);
     opacity: 1;
 }
 

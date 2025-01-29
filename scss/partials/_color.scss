@@ -1,19 +1,5 @@
 @use "_variables" as *;
-
-:root {
-    --background-color: #{$secondary_color};
-    --text-color: #{$primary_color};
-    --link-color: #{$dark-accent-color};
-    --blend-mode: #{$dark-blend-mode};
-}
   
-[theme="dark"] {
-    --background-color: #{$primary_color};
-    --text-color: #{$secondary-color};
-    --link-color: #{$light-accent-color};
-    --blend-mode: #{$light-blend-mode};
-}
-
 body { // Baseline text & background color
     background-color: var(--background-color);
     color: var(--text-color);

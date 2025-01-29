@@ -30,7 +30,6 @@ function activateColorScheme() {
   if (isDarkTheme) activateDarkTheme();
   if (isLightTheme) activateLightTheme();
   if (isNotSpecified || isNotSupported) {
-      console.log("Your browser doesn't have or support a color scheme preference. Defaulting to dark theme.");
       activateDarkTheme();
   }
 }
