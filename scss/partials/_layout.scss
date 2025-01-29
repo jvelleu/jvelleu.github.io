@@ -1,14 +1,9 @@
 @use "_variables" as *;
 
-/* CURSOR */
-:root * {
-    cursor: none; //Hide default cursor
-}
-
 @mixin base-cursor {
     position: fixed; // Follow cursor
-    width: calc($responsive-pad * 2); //0; // Inititalize at 0;
-    height: calc($responsive-pad * 2); //0; // Inititalize at 0;
+    width: calc($responsive-pad * 2);
+    height: calc($responsive-pad * 2);
     border-radius: 50%;
     transform: translate(-50%, -50%); // Center the circle
     pointer-events: none;

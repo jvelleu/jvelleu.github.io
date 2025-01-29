@@ -4,7 +4,7 @@
   --text-color: #000;
   --link-color: #5d24f5;
   --blend-mode: screen;
-  --weight-correct: 50;
+  --weight-correct: 35;
   --radius: calc(clamp(10px, 1em, 30px) * 2);
 }
 
@@ -14,6 +14,10 @@
   --link-color: #f1f227;
   --blend-mode: multiply;
   --weight-correct: 0;
+}
+
+[cursor=custom] * {
+  cursor: none;
 }
 
 :root {
@@ -143,11 +147,6 @@ p {
 
 #logo {
   text-transform: uppercase;
-}
-
-/* CURSOR */
-:root * {
-  cursor: none;
 }
 
 #cursor {

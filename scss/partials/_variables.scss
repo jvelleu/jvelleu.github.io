@@ -43,7 +43,7 @@ $slow-transition: 0.4s ease;
     --text-color: #{$primary_color};
     --link-color: #{$dark-accent-color};
     --blend-mode: #{$dark-blend-mode};
-    --weight-correct: 50;
+    --weight-correct: 35;
     --radius: #{calc($responsive-pad * 2)};
 }
 
@@ -53,4 +53,8 @@ $slow-transition: 0.4s ease;
     --link-color: #{$light-accent-color};
     --blend-mode: #{$light-blend-mode};
     --weight-correct: 0;
+}
+
+[cursor="custom"] * {
+    cursor: none; // Hide default cursor for custom cursor
 }

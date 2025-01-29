@@ -111,6 +111,8 @@ links.forEach(link => {
     });
 });
 
+document.documentElement.setAttribute("cursor", "custom")
+
 //INTRO
 // Function to get the width of text using the measureText method
 function getTextWidth(text, font = '2rem Arial') {
@@ -211,6 +213,5 @@ document.addEventListener("mousemove", (event) => {
     }
 });
 
-  
 // Initialize positions on page load
 window.onload = initializePositions;

@@ -52,4 +52,5 @@ export function initializeCursor() {
             cursorBg.style.backgroundColor = 'transparent'; // Remove tint
         });
     });
+    document.documentElement.setAttribute("cursor", "custom") // Remove default cursor
 }
